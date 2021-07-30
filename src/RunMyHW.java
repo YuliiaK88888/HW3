@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class RunMyHW {
     public static void main(String[] args) {
@@ -63,8 +62,54 @@ public class RunMyHW {
         Collections.reverse(numbers);
         System.out.println(numbers);
 
+        Collections.shuffle(numbers);
+        System.out.println(numbers);
+
+        ArrayList<String> vegetables = new ArrayList<>();
+        vegetables.add("potato");
+        vegetables.add("cucmber");
+        vegetables.add("onion");
+        vegetables.add("tomato");
+        vegetables.add("carrot");
+        System.out.println(vegetables);
+
+        int indexPotato = vegetables.indexOf("potato");
+        System.out.println(indexPotato);
+        vegetables.set(indexPotato, "tomato");
+        int indexTomato = vegetables.lastIndexOf("tomato");
+        vegetables.set(indexTomato, "potato");
+        System.out.println(vegetables);
+
+
+        ArrayList<String> seasons = new ArrayList<>();
+        seasons.add("Зима");
+        seasons.add("Лето");
+        seasons.add("Весна");
+
+        ArrayList<String> seasons2 = new ArrayList<>();
+        seasons2.add("Весна");
+        seasons2.add("Осень");
+        seasons2.add("Лето");
+        System.out.println(seasons);
+        System.out.println(seasons2);
+
+        ArrayList<String> seasons3 = new ArrayList<>(seasons2);
+        seasons3.retainAll(seasons);
+        System.out.println(seasons3);
+
+        Collection<Integer> one = Arrays.asList(1, 2, 3, 4, 5, 6);
+        Collection<Integer> two = Arrays.asList(5, 6, 7, 8, 9, 10);
+
+        Collection<Integer> similar = new HashSet<>(one);
+        Collection<Integer> different = new HashSet<>();
+        different.addAll(one);
+        different.addAll(two);
+
+        similar.retainAll(two);
+        different.removeAll(similar);
+        System.out.println(similar);
+        System.out.println(different);
 
     }
-
 
 }
